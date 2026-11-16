@@ -17,17 +17,12 @@ ml_service/
 ├─ train_model.py
 ├─ requirements.txt
 ├─ Dockerfile
-├─ .gitignore
-├─ README.md
 ├─ templates/
 │  └─ main.html
-├─ screenshots/
-│  └─ prediction.png
 └─ model/
-   └─ model.pkl
 ```
 
-โฟลเดอร์ `model` และไฟล์ `model/model.pkl` จะถูกสร้างอัตโนมัติเมื่อฝึกและบันทึกโมเดลด้วย `train_model.py`
+โฟลเดอร์ `model` จะถูกสร้างอัตโนมัติเมื่อฝึกและบันทึกโมเดล (ใน repository นี้ยังมีไฟล์ `README.md`, `.gitignore` และโฟลเดอร์ `screenshots/` สำหรับเอกสารประกอบการส่งงาน)
 
 ---
 
@@ -205,9 +200,16 @@ curl -i -X POST "http://127.0.0.1:5000/predict" \
   -d '{"features":[8.3,25.0,6.0,1.0,1200,3.0,34.2,-118.3]}'
 ```
 
-### ภาพหน้าจอของหน้าเว็บที่ทำนายผลสำเร็จ
+### ภาพหน้าจอผลการทดสอบ
 
-![ผลการทำนายบนหน้าเว็บ](screenshots/prediction.png)
+#### หน้าเว็บที่ทำนายผลสำเร็จ (`http://127.0.0.1:5000/`)
+![หน้าเว็บที่ทำนายผลสำเร็จ](screenshots/web_prediction.png)
+
+#### ผลการรัน Docker Container (`docker run --rm -p 5000:5000 ds-ml-service`)
+![ผลการรัน Docker Container](screenshots/docker_run.png)
+
+#### ผลการตรวจสอบ API `/predict`
+![ผลการตรวจสอบ API /predict](screenshots/api_test.png)
 
 ---
 
